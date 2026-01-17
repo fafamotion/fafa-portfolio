@@ -5,38 +5,13 @@ import Work from './pages/Work'
 import Reel from './pages/Reel'
 import About from './pages/About'
 
-const [authorized, setAuthorized] = useState(
-  sessionStorage.getItem('auth') === 'true'
-)
-
-if (!authorized) {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
-      <div className="flex flex-col gap-4">
-        <input
-          type="password"
-          placeholder="Password"
-          className="border px-4 py-2"
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' && e.target.value === 'flatwhite') {
-              sessionStorage.setItem('auth', 'true')
-              setAuthorized(true)
-            }
-          }}
-        />
-        <div className="text-xs opacity-50 text-center">
-          Protected Portfolio
-        </div>
-      </div>
-    </div>
-  )
-}
-
-
-
-
-
 export default function App() {
+  // ✅ 密码门禁（sessionStorage：关掉浏览器再开会重新要密码）
+  const [authorized, setAuthorized] = useState(
+    sessionStorage.getItem('auth') === 'true'
+  )
+  const [password, setPassword] = useState('')
+
   const [time, setTime] = useState(
     new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })
   )
@@ -63,6 +38,59 @@ export default function App() {
       ? 'leading-none border-b-[2px] border-current pb-0'
       : 'leading-none opacity-30 hover:opacity-100 pb-0'
 
+  // ✅ 未授权：只显示密码页
+  if (!authorized) {
+    const PASSWORD = 'fafapass' // ← 改成你自己的密码
+
+    const submit = () => {
+      if (password === PASSWORD) {
+        sessionStorage.setItem('auth', 'true')
+        setAuthorized(true)
+      } else {
+        alert('Wrong password')
+      }
+    }
+
+    return (
+      <div className="min-h-screen font-sans bg-white text-black flex items-center justify-center">
+  <div className="w-full max-w-[320px] px-6 text-center">
+    <div className="text-5xl font-bold tracking-tighter leading-none">
+      Fafa
+    </div>
+
+    <div className="mt-2 text-[13px] font-bold opacity-60">
+      Still working on
+    </div>
+
+    <input
+      type="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter') submit()
+      }}
+      placeholder="Password"
+      className="mt-10 w-full border border-black/20 px-4 py-3 text-[14px] outline-none text-center"
+    />
+
+    <button
+      onClick={submit}
+      className="mt-4 w-full border border-black/40 py-3 text-[14px] font-bold
+                 hover:bg-black hover:text-white transition-colors"
+    >
+      Enter
+    </button>
+
+    <div className="mt-6 text-[11px] opacity-40">
+      Tip: close browser to re-lock
+    </div>
+  </div>
+</div>
+
+    )
+  }
+
+  // ✅ 已授权：正常网站
   return (
     <BrowserRouter>
       <div className={`min-h-screen font-sans ${isDark ? 'bg-[#121212] text-white' : 'bg-white text-black'}`}>
