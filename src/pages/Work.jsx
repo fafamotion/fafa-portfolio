@@ -23,16 +23,16 @@ const itemVariants = {
 
 // data
 const works = [
-  { id: 6, title: "Long Art", category: "Experimental", url: "project_test/5.jpg" },
-  { id: 7, title: "Vertical Project", category: "Motion", url: "project_test/Print-1.jpg" },
-  { id: 8, title: "Square Design", category: "Graphic", url: "project_test/print-3.00061.jpg" },
-  { id: 9, title: "Landscape Film", category: "Video", url: "project_test/Snapshot 2.png" },
-  { id: 10, title: "Long Art", category: "Experimental", url: "project_test/微信图片_20250428194048.png" },
-  { id: 5, title: "Long Art", category: "Experimental", url: "project_test/Comp 2_00000.jpg" },
-  { id: 1, title: "Vertical Project", category: "Motion", url: "project_test/d0af8c91d8405a266678ab6633d1e0a4ae6fe0f5.jpg" },
-  { id: 2, title: "Square Design", category: "Graphic", url: "project_test/print-4.00126.jpg" },
-  { id: 3, title: "Landscape Film", category: "Video", url: "project_test/Snapshot 2.png" },
-  { id: 4, title: "Long Art", category: "Experimental", url: "project_test/微信图片_20250428194048.png" },
+  { id: 6, title: "Long Art", category: "Experimental", url: "/project_test/5.jpg" },
+  { id: 7, title: "Vertical Project", category: "Motion", url: "/project_test/Print-1.jpg" },
+  { id: 8, title: "Square Design", category: "Graphic", url: "/project_test/print-3.00061.jpg" },
+  { id: 9, title: "Landscape Film", category: "Video", url: "/project_test/Snapshot 2.png" },
+  { id: 10, title: "Long Art", category: "Experimental", url: "/project_test/微信图片_20250428194048.png" },
+  { id: 5, title: "Long Art", category: "Experimental", url: "/project_test/Comp 2_00000.jpg" },
+  { id: 1, title: "Vertical Project", category: "Motion", url: "/project_test/d0af8c91d8405a266678ab6633d1e0a4ae6fe0f5.jpg" },
+  { id: 2, title: "Square Design", category: "Graphic", url: "/project_test/print-4.00126.jpg" },
+  { id: 3, title: "Landscape Film", category: "Video", url: "/project_test/Snapshot 2.png" },
+  { id: 4, title: "Long Art", category: "Experimental", url: "/project_test/微信图片_20250428194048.png" },
 ]
 
 export default function Work({ isDark }) {
