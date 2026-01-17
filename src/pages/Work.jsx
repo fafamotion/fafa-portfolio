@@ -17,15 +17,13 @@ const itemVariants = {
 
 const works = [
 
-   {
+  {
     id: 2,
-    title: 'Ink & The City',
-    category: 'Personal',
+    title: '11111',
+    category: '1',
     url: '/project_test/5.jpg',
-    interactive: true,
-    href: '/work/ink-and-the-city',
+    interactive: false,
   },
-
 
   {
     id: 1,
@@ -43,14 +41,23 @@ export default function Work({ isDark }) {
 
   // ✅ 根据作品数量动态控制列数：作品少 -> 列也少（不会固定空出 3 列）
   const colClass = useMemo(() => {
-    const n = works.length
+  const n = works.length
 
-    const smCols = n >= 2 ? 2 : 1
-    const lgCols = n >= 3 ? 3 : n === 2 ? 2 : 1
+  const smCols = n >= 2 ? 2 : 1
+  const lgCols = n >= 3 ? 3 : n === 2 ? 2 : 1
 
-    // 你现在是 lg:3，如果以后想最多 4 列，可以把 lgCols 的逻辑改掉
-    return `columns-1 sm:columns-${smCols} lg:columns-${lgCols}`
-  }, [])
+  const smMap = {
+    1: 'sm:columns-1',
+    2: 'sm:columns-2',
+  }
+  const lgMap = {
+    1: 'lg:columns-1',
+    2: 'lg:columns-2',
+    3: 'lg:columns-3',
+  }
+
+  return `columns-1 ${smMap[smCols]} ${lgMap[lgCols]}`
+}, [works.length])
 
   return (
     <motion.main

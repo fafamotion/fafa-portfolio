@@ -103,7 +103,7 @@ export default function App() {
   <div className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em]">
     Fafa
   </div>
-  <span className="text-[15px] font-bold">
+  <span className="text-[12px] font-bold">
     QINGDAO,CN - {time}
   </span>
 </div>
