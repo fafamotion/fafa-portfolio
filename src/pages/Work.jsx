@@ -17,19 +17,73 @@ const itemVariants = {
 
 const works = [
 
+ {
+    id: 8,
+    title: 'Book',
+    category: '2025/Animation',
+    url: '/project/2025/Fruit/book.webm',
+    interactive: true,
+  },
+
+
+ {
+    id: 7,
+    title: 'Ink CIty',
+    category: '2025/Animation',
+    url: '/project/2025/Ink City/inkcity.webm',
+    interactive: true,
+  },
+
+
+ {
+    id: 6,
+    title: 'WhiteNoise',
+    category: '2024/Animation',
+    url: '/project/2024/Whitenoise/whitenoise.webm',
+    interactive: true,
+  },
+
+
+    {
+    id: 5,
+    title: 'OnePlus Oxygen',
+    category: '2024/Animation',
+    url: '/project/2024/ObeplusOxygen/oneplusoxygen.webm',
+    interactive: true,
+  },
+
+
+    {
+    id: 4,
+    title: 'OnePlus Nord',
+    category: '2024/Animation',
+    url: '/project/2024/OneplusNode/oneplusnode.webm',
+    interactive: true,
+  },
+
+
+    {
+    id: 3,
+    title: 'MindPark',
+    category: '2023/Animation',
+    url: '/project/2023/Mindpark/Mindpark.webm',
+    interactive: true,
+  },
+
+
   {
     id: 2,
-    title: '11111',
-    category: '1',
-    url: '/project_test/5.jpg',
-    interactive: false,
+    title: 'OnePlus',
+    category: '2023/Animation',
+    url: '/project/2023/Oneplus_community/OnePlus - Power of Community Composition.webm',
+    interactive: true,
   },
 
   {
     id: 1,
-    title: '11111',
-    category: '1',
-    url: '/project/Startrek/star_trek.webm',
+    title: '',
+    category: '',
+    url: '/project/2023/Startrek/star_trek.webm',
     interactive: false,
   },
  
@@ -44,20 +98,23 @@ export default function Work({ isDark }) {
   const n = works.length
 
   const smCols = n >= 2 ? 2 : 1
-  const lgCols = n >= 3 ? 3 : n === 2 ? 2 : 1
+  const lgCols = n >= 4 ? 4 : n === 3 ? 3 : n === 2 ? 2 : 1
 
   const smMap = {
     1: 'sm:columns-1',
     2: 'sm:columns-2',
   }
+
   const lgMap = {
     1: 'lg:columns-1',
     2: 'lg:columns-2',
     3: 'lg:columns-3',
+    4: 'lg:columns-4',
   }
 
   return `columns-1 ${smMap[smCols]} ${lgMap[lgCols]}`
 }, [works.length])
+
 
   return (
     <motion.main
@@ -130,16 +187,17 @@ export default function Work({ isDark }) {
                       className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300
                                  group-hover:opacity-100"
                     >
-                      <div className="flex flex-col items-center text-center">
-                        <div className="text-[22px] md:text-[58px] font-bold uppercase tracking-tight text-black leading-none">
-                          {work.title}
-                        </div>
-                        {work.category && (
-                          <div className="mt-2 text-[11px] uppercase tracking-widest text-black/70">
-                            {work.category}
-                          </div>
-                        )}
-                      </div>
+                      <div className="flex flex-col items-center text-center gap-[1px]">
+  <div className="text-[22px] md:text-[58px] font-bold tracking-tight text-black leading-[0.9]">
+    {work.title}
+  </div>
+
+  {work.category && (
+    <div className="text-[15px] tracking-widest text-black/70 leading-none">
+      {work.category}
+    </div>
+  )}
+</div>
                     </div>
                   </>
                 )}

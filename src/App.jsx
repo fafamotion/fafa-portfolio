@@ -25,6 +25,13 @@ export default function App() {
     window.scrollTo(0, 0)
   }, [])
 
+
+
+
+
+
+
+
   // 时间更新
   useEffect(() => {
     const timer = setInterval(() => {
@@ -97,18 +104,18 @@ export default function App() {
         <div className="mx-auto max-w-none px-[clamp(16px,4vw,64px)]">
 
           {/* Nav */}
-          <nav className="sticky top-0 z-50 flex justify-between items-end py-1 backdrop-blur border-b
+          <nav className="sticky top-0 z-50 flex justify-between items-end py-3 backdrop-blur border-b
             bg-white/80 border-black/10 text-black">
             <div className="flex flex-col items-start">
   <div className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em]">
     Fafa
   </div>
-  <span className="text-[12px] font-bold">
+  <span className="text-[12px] font-SemiBold">
     QINGDAO,CN - {time}
   </span>
 </div>
 
-            <div className="flex gap-5 text-[18px] font-bold pb-1 leading-none">
+            <div className="flex gap-5 text-[18px] pb-1 leading-none">
               <NavLink
                 to="/"
                 end
@@ -136,9 +143,65 @@ export default function App() {
           </Routes>
 
           {/* Footer */}
-          <footer className="py-20 text-center opacity-10 text-[9px] uppercase tracking-widest">
-            End of Index
-          </footer>
+<footer className="mt-24 border-t border-black/10 py-10 text-[18px]">
+  <div className="flex items-start justify-between">
+
+    {/* Left — Email */}
+    <div className="min-w-[220px]">
+      <a
+        href="mailto:heyfafamotion@gmail.com"
+        className="leading-none hover:opacity-60 transition-opacity"
+      >
+        heyfafamotion@gmail.com
+      </a>
+    </div>
+
+    {/* Right — Social */}
+    <div className="text-left">
+      <a
+        href="https://instagram.com/yourhandle"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block leading-none hover:opacity-60 transition-opacity"
+      >
+        Instagram
+      </a>
+
+      <a
+        href="https://vimeo.com/yourhandle"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+      >
+        Vimeo
+      </a>
+
+      <a
+        href="https://linkedin.com/in/yourhandle"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+      >
+        LinkedIn
+      </a>
+
+      <a
+        href="https://twitter.com/yourhandle"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+      >
+        Twitter
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
 
         </div>
       </div>
