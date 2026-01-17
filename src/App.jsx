@@ -5,6 +5,37 @@ import Work from './pages/Work'
 import Reel from './pages/Reel'
 import About from './pages/About'
 
+const [authorized, setAuthorized] = useState(
+  sessionStorage.getItem('auth') === 'true'
+)
+
+if (!authorized) {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="flex flex-col gap-4">
+        <input
+          type="password"
+          placeholder="Password"
+          className="border px-4 py-2"
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && e.target.value === 'flatwhite') {
+              sessionStorage.setItem('auth', 'true')
+              setAuthorized(true)
+            }
+          }}
+        />
+        <div className="text-xs opacity-50 text-center">
+          Protected Portfolio
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+
+
+
 export default function App() {
   const [time, setTime] = useState(
     new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })
