@@ -99,12 +99,14 @@ export default function App() {
           {/* Nav */}
           <nav className="sticky top-0 z-50 flex justify-between items-end py-1 backdrop-blur border-b
             bg-white/80 border-black/10 text-black">
-            <div className="flex flex-col">
-              <div className="text-8xl font-bold tracking-tighter leading-none">Fafa</div>
-              <span className="text-[15px] font-bold">
-                QINGDAO,CN - {time}
-              </span>
-            </div>
+            <div className="flex flex-col items-start">
+  <div className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em]">
+    Fafa
+  </div>
+  <span className="text-[15px] font-bold">
+    QINGDAO,CN - {time}
+  </span>
+</div>
 
             <div className="flex gap-5 text-[18px] font-bold pb-1 leading-none">
               <NavLink
