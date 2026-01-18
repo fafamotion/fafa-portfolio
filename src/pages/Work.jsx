@@ -18,6 +18,48 @@ const itemVariants = {
 const works = [
 
  {
+    id: 12,
+    title: 'Krayon',
+    category: '2025/Animation',
+    url: '/project/2025/Krayon/Krayon.webm',
+    interactive: true,
+  },
+
+ {
+    id: 12,
+    title: 'ZZZ',
+    category: '2025/Animation',
+    url: '/project/2025/ZZZ/zzz.webm',
+    interactive: false,
+  },
+
+ {
+    id: 11,
+    title: 'Mid',
+    category: '2025/Animation',
+    url: '/project/2025/Mid/中秋.webm',
+    interactive: false,
+  },
+
+ {
+    id: 10,
+    title: 'IQOO',
+    category: '2025/Animation',
+    url: '/project/2025/IQOO/电竞双芯.webm',
+    interactive: false,
+  },
+
+ {
+    id: 9,
+    title: 'VivoS30',
+    category: '2025/Animation',
+    url: '/project/2025/VIVO/vivos30.webm',
+    interactive: true,
+  },
+
+
+
+ {
     id: 8,
     title: 'Book',
     category: '2025/Animation',
@@ -118,7 +160,7 @@ export default function Work({ isDark }) {
 
   return (
     <motion.main
-      className={`${colClass} gap-4 space-y-6`}
+      className={`${colClass} gap-4 space-y-6 mt-0`}
       variants={containerVariants}
       initial="hidden"
       animate="show"
@@ -188,12 +230,12 @@ export default function Work({ isDark }) {
                                  group-hover:opacity-100"
                     >
                       <div className="flex flex-col items-center text-center gap-[1px]">
-  <div className="text-[22px] md:text-[58px] font-bold tracking-tight text-black leading-[0.9]">
+  <div className="text-[22px] md:text-[38px] font-bold tracking-tight text-black leading-[0.9]">
     {work.title}
   </div>
 
   {work.category && (
-    <div className="text-[15px] tracking-widest text-black/70 leading-none">
+    <div className="text-[10px] tracking-widest text-black/70 leading-none">
       {work.category}
     </div>
   )}

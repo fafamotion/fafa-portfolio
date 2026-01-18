@@ -13,7 +13,11 @@ export default function App() {
   const [password, setPassword] = useState('')
 
   const [time, setTime] = useState(
-    new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })
+    new Date().toLocaleTimeString('en-US', {
+      hour: 'numeric',
+      minute: '2-digit',
+      hour12: true,
+    })
   )
   const [isDark, setIsDark] = useState(false)
 
@@ -25,17 +29,16 @@ export default function App() {
     window.scrollTo(0, 0)
   }, [])
 
-
-
-
-
-
-
-
   // 时间更新
   useEffect(() => {
     const timer = setInterval(() => {
-      setTime(new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true }))
+      setTime(
+        new Date().toLocaleTimeString('en-US', {
+          hour: 'numeric',
+          minute: '2-digit',
+          hour12: true,
+        })
+      )
     }, 1000)
     return () => clearInterval(timer)
   }, [])
@@ -60,78 +63,89 @@ export default function App() {
 
     return (
       <div className="min-h-screen font-sans bg-white text-black flex items-center justify-center">
-  <div className="w-full max-w-[320px] px-6 text-center">
-    <div className="text-5xl font-bold tracking-tighter leading-none">
-      Fafa
-    </div>
+        <div className="w-full max-w-[320px] px-6 text-center">
+          <div className="text-5xl font-bold tracking-tighter leading-none">
+            Fafa
+          </div>
 
-    <div className="mt-2 text-[13px] font-bold opacity-60">
-      Still working on
-    </div>
+          <div className="mt-2 text-[13px] font-bold opacity-60">
+            Still working on
+          </div>
 
-    <input
-      type="password"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter') submit()
-      }}
-      placeholder="Password"
-      className="mt-10 w-full border border-black/20 px-4 py-3 text-[14px] outline-none text-center"
-    />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') submit()
+            }}
+            placeholder="Password"
+            className="mt-10 w-full border border-black/20 px-4 py-3 text-[14px] outline-none text-center"
+          />
 
-    <button
-      onClick={submit}
-      className="mt-4 w-full border border-black/40 py-3 text-[14px] font-bold
-                 hover:bg-black hover:text-white transition-colors"
-    >
-      Enter
-    </button>
+          <button
+            onClick={submit}
+            className="mt-4 w-full border border-black/40 py-3 text-[14px] font-bold
+                       hover:bg-black hover:text-white transition-colors"
+          >
+            Enter
+          </button>
 
-    <div className="mt-6 text-[11px] opacity-40">
-      Tip: close browser to re-lock
-    </div>
-  </div>
-</div>
-
+          <div className="mt-6 text-[11px] opacity-40">
+            Tip: close browser to re-lock
+          </div>
+        </div>
+      </div>
     )
   }
 
   // ✅ 已授权：正常网站
   return (
     <BrowserRouter>
-      <div className={`min-h-screen font-sans ${isDark ? 'bg-[#121212] text-white' : 'bg-white text-black'}`}>
+      <div
+        className={`min-h-screen font-sans ${
+          isDark ? 'bg-[#121212] text-white' : 'bg-white text-black'
+        }`}
+      >
         <div className="mx-auto max-w-none px-[clamp(16px,4vw,64px)]">
-
           {/* Nav */}
-          <nav className="sticky top-0 z-50 flex justify-between items-end py-3 backdrop-blur border-b
-            bg-white/80 border-black/10 text-black">
-            <div className="flex flex-col items-start">
-  <div className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em]">
-    Fafa
-  </div>
-  <span className="text-[12px] font-SemiBold">
-    QINGDAO,CN - {time}
-  </span>
-</div>
+          <nav className="sticky top-0 z-50 backdrop-blur border-b bg-white/80 border-black/10 text-black">
+            {/* ✅ 顶部留白（pt-6）+ 底部更紧（pb-3），nav 与 grid 间距自然缩短 */}
+            <div className="flex justify-between items-end pt-3 pb-0">
+              <div className="flex flex-col items-start">
+                <div className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em] ">
+                  Fafa
+                </div>
+                {/* ✅ font-SemiBold -> font-semibold；tabular-nums 让时间数字不抖 */}
+                <span className="text-[12px] tabular-nums -translate-y-[8px]">
+                  QINGDAO,CN - {time}
+                </span>
+              </div>
 
-            <div className="flex gap-5 text-[18px] pb-1 leading-none">
-              <NavLink
-                to="/"
-                end
-                onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })}
-                className={linkClass}
-              >
-                Work
-              </NavLink>
+              <div className="flex gap-4 text-[18px] pb-1 leading-none -translate-y-[8px]">
+                <NavLink
+                  to="/"
+                  end
+                  onClick={() =>
+                    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+                  }
+                  className={linkClass}
+                >
+                  Work
+                </NavLink>
 
-              <NavLink to="/reel" className={linkClass}>
-                Reel
-              </NavLink>
+                <NavLink to="/Play" className={linkClass}>
+                  Play
+                </NavLink>
 
-              <NavLink to="/about" className={linkClass}>
-                About
-              </NavLink>
+                <NavLink to="/reel" className={linkClass}>
+                  Reel
+                </NavLink>
+
+                <NavLink to="/about" className={linkClass}>
+                  About
+                </NavLink>
+              </div>
             </div>
           </nav>
 
@@ -143,66 +157,58 @@ export default function App() {
           </Routes>
 
           {/* Footer */}
-<footer className="mt-24 border-t border-black/10 py-10 text-[18px]">
-  <div className="flex items-start justify-between">
+          <footer className="mt-24 border-t border-black/10 py-10 text-[18px]">
+            <div className="flex items-start justify-between">
+              {/* Left — Email */}
+              <div className="min-w-[220px]">
+                <a
+                  href="mailto:heyfafamotion@gmail.com"
+                  className="leading-none hover:opacity-60 transition-opacity"
+                >
+                  heyfafamotion@gmail.com
+                </a>
+              </div>
 
-    {/* Left — Email */}
-    <div className="min-w-[220px]">
-      <a
-        href="mailto:heyfafamotion@gmail.com"
-        className="leading-none hover:opacity-60 transition-opacity"
-      >
-        heyfafamotion@gmail.com
-      </a>
-    </div>
+              {/* Right — Social */}
+              <div className="text-left">
+                <a
+                  href="https://instagram.com/yourhandle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block leading-none hover:opacity-60 transition-opacity"
+                >
+                  Instagram
+                </a>
 
-    {/* Right — Social */}
-    <div className="text-left">
-      <a
-        href="https://instagram.com/yourhandle"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block leading-none hover:opacity-60 transition-opacity"
-      >
-        Instagram
-      </a>
+                <a
+                  href="https://vimeo.com/yourhandle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+                >
+                  Vimeo
+                </a>
 
-      <a
-        href="https://vimeo.com/yourhandle"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 block leading-none hover:opacity-60 transition-opacity"
-      >
-        Vimeo
-      </a>
+                <a
+                  href="https://linkedin.com/in/yourhandle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+                >
+                  LinkedIn
+                </a>
 
-      <a
-        href="https://linkedin.com/in/yourhandle"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 block leading-none hover:opacity-60 transition-opacity"
-      >
-        LinkedIn
-      </a>
-
-      <a
-        href="https://twitter.com/yourhandle"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-2 block leading-none hover:opacity-60 transition-opacity"
-      >
-        Twitter
-      </a>
-    </div>
-
-  </div>
-</footer>
-
-
-
-
-
-
+                <a
+                  href="https://twitter.com/yourhandle"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+                >
+                  Twitter
+                </a>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </BrowserRouter>
