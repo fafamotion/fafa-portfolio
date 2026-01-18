@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
-
 import Work from './pages/Work'
 import Reel from './pages/Reel'
 import About from './pages/About'
+import DetailPage from './pages/DetailPage'
+
 
 export default function App() {
   // ✅ 密码门禁（sessionStorage：关掉浏览器再开会重新要密码）
@@ -12,6 +13,11 @@ export default function App() {
   )
   const [password, setPassword] = useState('')
 
+  // ✅ 主题状态：存到 sessionStorage
+  const [isDark, setIsDark] = useState(
+    sessionStorage.getItem('dark') === 'true'
+  )
+
   const [time, setTime] = useState(
     new Date().toLocaleTimeString('en-US', {
       hour: 'numeric',
@@ -19,7 +25,6 @@ export default function App() {
       hour12: true,
     })
   )
-  const [isDark, setIsDark] = useState(false)
 
   // 刷新/首次进入强制回顶 + 禁止浏览器恢复滚动位置
   useEffect(() => {
@@ -42,6 +47,11 @@ export default function App() {
     }, 1000)
     return () => clearInterval(timer)
   }, [])
+
+  // ✅ 主题持久化（sessionStorage）
+  useEffect(() => {
+    sessionStorage.setItem('dark', String(isDark))
+  }, [isDark])
 
   const linkClass = ({ isActive }) =>
     isActive
@@ -84,6 +94,7 @@ export default function App() {
           />
 
           <button
+            type="button"
             onClick={submit}
             className="mt-4 w-full border border-black/40 py-3 text-[14px] font-bold
                        hover:bg-black hover:text-white transition-colors"
@@ -102,21 +113,40 @@ export default function App() {
   // ✅ 已授权：正常网站
   return (
     <BrowserRouter>
+      {/* ✅ 用 isDark 直接控制整站背景/文字 */}
       <div
         className={`min-h-screen font-sans ${
           isDark ? 'bg-[#121212] text-white' : 'bg-white text-black'
         }`}
       >
         <div className="mx-auto max-w-none px-[clamp(16px,4vw,64px)]">
-          {/* Nav */}
-          <nav className="sticky top-0 z-50 backdrop-blur border-b bg-white/80 border-black/10 text-black">
-            {/* ✅ 顶部留白（pt-6）+ 底部更紧（pb-3），nav 与 grid 间距自然缩短 */}
+          {/* Nav：也跟随 isDark（别用 dark:） */}
+          <nav
+            className={`sticky top-0 z-50 backdrop-blur border-b ${
+              isDark
+                ? 'bg-black/80 border-white/10 text-white'
+                : 'bg-white/80 border-black/10 text-black'
+            }`}
+          >
             <div className="flex justify-between items-end pt-3 pb-0">
               <div className="flex flex-col items-start">
-                <div className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em] ">
+                <button
+                  type="button"
+                  className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em]
+                             cursor-pointer select-none bg-transparent border-0 p-0 text-inherit"
+                  onPointerDown={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    setIsDark((prev) => !prev)
+                  }}
+                >
                   Fafa
-                </div>
-                {/* ✅ font-SemiBold -> font-semibold；tabular-nums 让时间数字不抖 */}
+                </button>
+
                 <span className="text-[12px] tabular-nums -translate-y-[8px]">
                   QINGDAO,CN - {time}
                 </span>
@@ -149,17 +179,21 @@ export default function App() {
             </div>
           </nav>
 
-          {/* Pages */}
+          {/* Pages：不传 isDark 给 Work，避免作品区“像刷新” */}
           <Routes>
-            <Route path="/" element={<Work isDark={isDark} />} />
+            <Route path="/" element={<Work />} />
+            <Route path="/work/:id" element={<DetailPage isDark={isDark} />} />
             <Route path="/reel" element={<Reel />} />
             <Route path="/about" element={<About />} />
           </Routes>
 
-          {/* Footer */}
-          <footer className="mt-24 border-t border-black/10 py-10 text-[18px]">
+          {/* Footer：border 跟随 isDark */}
+          <footer
+            className={`mt-24 border-t py-10 text-[18px] ${
+              isDark ? 'border-white/10' : 'border-black/10'
+            }`}
+          >
             <div className="flex items-start justify-between">
-              {/* Left — Email */}
               <div className="min-w-[220px]">
                 <a
                   href="mailto:heyfafamotion@gmail.com"
@@ -169,7 +203,6 @@ export default function App() {
                 </a>
               </div>
 
-              {/* Right — Social */}
               <div className="text-left">
                 <a
                   href="https://instagram.com/yourhandle"

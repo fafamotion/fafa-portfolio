@@ -7,12 +7,15 @@ export default function Reel() {
         <h1 className="text-4xl font-bold tracking-tight">Reel 2025</h1>
 
         <div className="relative w-full bg-black max-h-[70vh] aspect-video">
-          <video
-            src="project_test/REEL.mp4"
-            controls
-            muted
-            className="w-full h-full object-contain"
-          />
+          {/* 要更改视频，请替换 src 中的视频ID: dQw4w9WgXcQ */}
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/_Cba6MoJOAA"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
     </section>
