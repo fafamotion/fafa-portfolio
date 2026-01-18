@@ -18,13 +18,13 @@ const DetailPage = ({ isDark }) => {
   const isVideo = (url) => url.endsWith('.webm') || url.endsWith('.mp4');
 
   return (
-    <div className={`w-full min-h-screen pt-8 pb-20 ${isDark ? 'text-white' : 'text-black'}`}>
-      <div className="max-w-[1200px] mx-auto px-6">
+    <div className={`w-full min-h-screen pt-12 pb-20 ${isDark ? 'text-white' : 'text-black'}`}>
+      <div className="max-w-[1200px] mx-auto px-8">
         {/* 1. Title */}
         <h1 className="text-4xl md:text-6xl font-bold mb-1">{work.title}</h1>
 
         {/* 2. Year & Role */}
-        <div className="flex flex-col gap-0 mb-8 text-base opacity-80">
+        <div className="flex flex-col gap-0 mb-2 text-base opacity-80">
           <div>
             <span className="block text-xs opacity-60 mb-0.5">YEAR</span>
             {work.year}
@@ -67,7 +67,7 @@ const DetailPage = ({ isDark }) => {
 
         {/* 4. Description */}
         {work.description && (
-          <div className="max-w-2xl mb-16 whitespace-pre-line text-lg leading-relaxed opacity-90">
+          <div className="max-w-2xl mb6 whitespace-pre-line text-lg leading-relaxed opacity-90">
             {work.description}
           </div>
         )}

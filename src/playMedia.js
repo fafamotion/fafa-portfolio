@@ -6,7 +6,6 @@ export const playMedia = [
   { src: '/play/play_05.webm' },
   { src: '/play/play_06.webm' },
   { src: '/play/play_07.webm' },
-  { src: '/play/play_09.webm' },
   { src: '/play/play_08.webm' },
   { src: '/play/play_09.webm' },
   { src: '/play/play_10.webm' },

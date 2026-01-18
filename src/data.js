@@ -123,7 +123,7 @@ export const works = [
   {
     id: 11,
     slug: 'HyperCommission - ZenlessZoneZero 2024 Mix',
-    title: 'HyperCommission - ZenlessZoneZero 2024 Mix',
+    title: 'HyperCommission 2024 Mix',
     category: '2024/Animation',
     url: '/project/2024/ZenlessZonZero_2024_Mix/HyperCommission_Cover.webm',
     interactive: true,
