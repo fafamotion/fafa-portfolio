@@ -9,8 +9,8 @@ const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.55,
+      staggerChildren: 0.06,
+      delayChildren: 0.05,
     },
   },
 };
@@ -20,7 +20,7 @@ const itemVariants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration:0.5, ease: 'easeOut' },
+    transition: { duration: 0.5, ease: 'easeOut' },
   },
 };
 

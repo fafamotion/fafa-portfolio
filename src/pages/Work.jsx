@@ -2,16 +2,18 @@ import React, { useMemo, useRef, useEffect, memo } from 'react'
 import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 
+import { works } from '../data';
+
 const containerVariants = {
   hidden: { opacity: 1 },
   show: {
     opacity: 1,
     transition: {
       staggerChildren: 0.03,
-      delayChildren: 0.35,
+      delayChildren: 0.05,
     },
   },
-}
+};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -20,16 +22,12 @@ const itemVariants = {
     y: 0,
     transition: { duration: 0.5, ease: 'easeOut' },
   },
-}
+};
 
-import { works } from '../data';
-
-// ✅ 不再接收 isDark：用 Tailwind 的 dark: 来控制背景
 function Work() {
   const isVideo = (src) => /\.(webm|mp4|mov)$/i.test(src)
   const isImage = (src) => /\.(gif|png|jpe?g|webp|avif)$/i.test(src)
 
-  // ✅ 只在首次 mount 允许 initial="hidden"，之后禁止初始动画（避免主题切换像刷新）
   const hasMounted = useRef(false)
   useEffect(() => {
     hasMounted.current = true
@@ -56,13 +54,12 @@ function Work() {
       {works.map((work) => {
         const Wrapper = ({ children }) => {
           if (work.interactive && work.slug) {
-  return (
-    <NavLink to={`/work/${work.slug}`} className="block">
-      {children}
-    </NavLink>
-  )
-}
-
+            return (
+              <NavLink to={`/work/${work.slug}`} className="block">
+                {children}
+              </NavLink>
+            )
+          }
           return <div>{children}</div>
         }
 
@@ -131,5 +128,4 @@ function Work() {
   )
 }
 
-// ✅ 让 Work 在父组件 rerender（比如切主题）时也尽量不跟着 rerender
 export default memo(Work)
