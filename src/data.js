@@ -70,6 +70,33 @@ export const works = [
     year: 2025,
     role: 'Direction,Design,Animation',
   },
+
+  {
+    id: 14,
+    slug: 'PEACEBIRD',
+    title: 'PEACEBIRD - The Year of Dragon',
+    category: '2024/Animation',
+    url: '/project/2024/PEACEBIRD_The_Year_of_Dragon/PEACEBIRD_Cover.webm',
+    interactive: true,
+    videoUrl: 'https://vimeo.com/906657301',
+    detailImages: ['/project/2024/PEACEBIRD_The_Year_of_Dragon/PEACEBIRD_01.webm', '/project/2024/PEACEBIRD_The_Year_of_Dragon/PEACEBIRD_02.webm'],
+    year: 2024,
+    role: 'Animation'
+  },
+
+  {
+    id: 15,
+    slug: 'OPPO Community',
+    title: 'OPPO Community',
+    category: '2024/Animation',
+    url: '/project/2024/OPPO_Community/OPPO_Community_Cover.webm',
+    interactive: true,
+    videoUrl: 'https://vimeo.com/969378501',
+    detailImages: ['/project/2024/OPPO_Community/OPPO_Community_01.webm', '/project/2024/OPPO_Community/OPPO_Community_02.webm', '/project/2024/OPPO_Community/OPPO_Community_03.webm'],
+    year: 2024,
+    role: '2D Animation'
+  },
+
   {
     id: 6,
     slug: 'whiteNoise',
@@ -82,13 +109,18 @@ export const works = [
     year: 2024,
     role: 'Animation'
   },
+
   {
     id: 5,
-    slug: 'oneplus-oxygen',
-    title: 'OnePlusOxygen',
+    slug: 'OxygenOS_14',
+    title: 'OxygenOS 14',
     category: '2024/Animation',
-    url: '/project/2024/ObeplusOxygen/oneplusoxygen.webm',
-    interactive: true
+    url: '/project/2024/OxygenOS_14/OxygenOS_14_Cover.webm',
+    interactive: true,
+    videoUrl: 'https://vimeo.com/926152977',
+    detailImages: ['/project/2024/OxygenOS_14/OxygenOS_14_03.webm', '/project/2024/OxygenOS_14/OxygenOS_14_04.webm', '/project/2024/OxygenOS_14/OxygenOS_14_05.webm', '/project/2024/OxygenOS_14/OxygenOS_14_06.webm'],
+    year: 2024,
+    role: '2D Animation'
   },
   {
     id: 4,

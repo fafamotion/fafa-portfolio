@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import Work from './pages/Work'
+import Play from './pages/Play'
 import Reel from './pages/Reel'
 import About from './pages/About'
 import DetailPage from './pages/DetailPage'
 
 
 export default function App() {
-  // ✅ 密码门禁（sessionStorage：关掉浏览器再开会重新要密码）
-  const [authorized, setAuthorized] = useState(
-    sessionStorage.getItem('auth') === 'true'
-  )
-  const [password, setPassword] = useState('')
-
   // ✅ 主题状态：存到 sessionStorage
   const [isDark, setIsDark] = useState(
     sessionStorage.getItem('dark') === 'true'
@@ -58,59 +53,7 @@ export default function App() {
       ? 'leading-none border-b-[2px] border-current pb-0'
       : 'leading-none opacity-30 hover:opacity-100 pb-0'
 
-  // ✅ 未授权：只显示密码页
-  if (!authorized) {
-    const PASSWORD = 'fafapass' // ← 改成你自己的密码
-
-    const submit = () => {
-      if (password === PASSWORD) {
-        sessionStorage.setItem('auth', 'true')
-        setAuthorized(true)
-      } else {
-        alert('Wrong password')
-      }
-    }
-
-    return (
-      <div className="min-h-screen font-sans bg-white text-black flex items-center justify-center">
-        <div className="w-full max-w-[320px] px-6 text-center">
-          <div className="text-5xl font-bold tracking-tighter leading-none">
-            Fafa
-          </div>
-
-          <div className="mt-2 text-[13px] font-bold opacity-60">
-            Still working on
-          </div>
-
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') submit()
-            }}
-            placeholder="Password"
-            className="mt-10 w-full border border-black/20 px-4 py-3 text-[14px] outline-none text-center"
-          />
-
-          <button
-            type="button"
-            onClick={submit}
-            className="mt-4 w-full border border-black/40 py-3 text-[14px] font-bold
-                       hover:bg-black hover:text-white transition-colors"
-          >
-            Enter
-          </button>
-
-          <div className="mt-6 text-[11px] opacity-40">
-            Tip: close browser to re-lock
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  // ✅ 已授权：正常网站
+  // ✅ 正常网站
   return (
     <BrowserRouter>
       {/* ✅ 用 isDark 直接控制整站背景/文字 */}
@@ -179,10 +122,11 @@ export default function App() {
             </div>
           </nav>
 
-          {/* Pages：不传 isDark 给 Work，避免作品区“像刷新” */}
+          {/* Pages：不传 isDark 给 Work，避免作品区"像刷新" */}
           <Routes>
             <Route path="/" element={<Work />} />
             <Route path="/work/:id" element={<DetailPage isDark={isDark} />} />
+            <Route path="/Play" element={<Play />} />
             <Route path="/reel" element={<Reel />} />
             <Route path="/about" element={<About />} />
           </Routes>
