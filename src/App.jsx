@@ -95,7 +95,7 @@ export default function App() {
                 </span>
               </div>
 
-              <div className="flex gap-4 text-[18px] pb-1 leading-none -translate-y-[8px]">
+              <div className="flex gap-2 sm:gap-4 text-[18px] pb-1 leading-none -translate-y-[8px] flex-col sm:flex-row items-start sm:items-end">
                 <NavLink
                   to="/"
                   end
@@ -118,6 +118,16 @@ export default function App() {
                 <NavLink to="/about" className={linkClass}>
                   About
                 </NavLink>
+
+                <button
+                  onClick={() => {
+                    const footer = document.getElementById('contact')
+                    footer?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className="leading-none opacity-100 hover:opacity-100 pb-0 border-0 bg-transparent text-inherit cursor-pointer inline-block p-0 m-0 font-inherit text-[18px] self-start sm:self-end"
+                >
+                  Contact
+                </button>
               </div>
             </div>
           </nav>
@@ -133,6 +143,7 @@ export default function App() {
 
           {/* Footer：border 跟随 isDark */}
           <footer
+            id="contact"
             className={`mt-24 border-t py-10 text-[18px] ${
               isDark ? 'border-white/10' : 'border-black/10'
             }`}
@@ -156,8 +167,6 @@ export default function App() {
                 >
                   Instagram
                 </a>
-
-
 
                 <a
                   href="https://linkedin.com/in/fafa-zhu-689035335"
@@ -184,3 +193,4 @@ export default function App() {
     </BrowserRouter>
   )
 }
+

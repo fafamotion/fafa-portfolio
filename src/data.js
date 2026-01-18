@@ -1,4 +1,19 @@
 export const works = [
+
+  {
+    id: 7,
+    slug: 'Calligraphy in Motion',
+    title: 'Calligraphy in Motion',
+    category: '2025/Director',
+    url: '/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_Cover.webm',
+    interactive: true,
+    videoUrl: 'https://www.youtube.com/embed/4xpc4gLYtwI',
+    detailImages: ['/project/2025/ColorFusion/ColorFusion_01.webm', '/project/2025/ColorFusion/ColorFusion_02.webm','/project/2025/ColorFusion/ColorFusion_03.webm','/project/2025/ColorFusion/ColorFusion_04.webm','/project/2025/ColorFusion/ColorFusion_05.webm'],
+    year: 2025,
+    role: 'Direction,Design,Animation'
+  },
+
+
   {
     id: 13,
     slug: 'Krayon Anyday - Concept Animation',
@@ -64,17 +79,19 @@ export const works = [
     year: 2025,
     role: 'Animation'
   },
+
+
   {
-    id: 7,
-    slug: 'Calligraphy in Motion',
-    title: 'Calligraphy in Motion',
-    category: '2025/Director',
-    url: '/project/2025/Ink City/inkcity.webm',
+    id: 21,
+    slug: 'JINGDONG Furniture',
+    title: 'JINGDONG Furniture',
+    category: '2025/Animation',
+    url: '/project/2025/JINGDONG_Furniture/JINGDONG_Furniture_Cover.webm',
     interactive: true,
-    videoUrl: 'https://www.youtube.com/embed/4xpc4gLYtwI',
-    detailImages: ['/project/2025/ColorFusion/ColorFusion_01.webm', '/project/2025/ColorFusion/ColorFusion_02.webm','/project/2025/ColorFusion/ColorFusion_03.webm','/project/2025/ColorFusion/ColorFusion_04.webm','/project/2025/ColorFusion/ColorFusion_05.webm'],
     year: 2025,
-    role: 'Direction,Design,Animation'
+    role: '2D Animation',
+    videoUrl: 'https://vimeo.com/1048512036',
+    detailImages:['/project/2025/JINGDONG_Furniture/JINGDONG_Furniture_01.webm','/project/2025/JINGDONG_Furniture/JINGDONG_Furniture_03.webm']
   },
 
   {
@@ -102,6 +119,25 @@ export const works = [
     year: 2024,
     role: '2D Animation'
   },
+
+  {
+    id: 16,
+    slug: 'HyperCommission - ZenlessZoneZero 2024 Mix',
+    title: 'HyperCommission - ZenlessZoneZero 2024 Mix',
+    category: '2024/Animation',
+    url: '/project/2024/ZenlessZonZero_2024_Mix/HyperCommission_Cover.webm',
+    interactive: true,
+    year: 2024,
+    role: '2D Animation',
+     videoUrl: 'https://vimeo.com/1018521606',
+     detailImages:['/project/2024/ZenlessZonZero_2024_Mix/HyperCommission_01.webm',
+                   '/project/2024/ZenlessZonZero_2024_Mix/HyperCommission_02.webm',
+                   '/project/2024/ZenlessZonZero_2024_Mix/HyperCommission_03.webm',
+                   '/project/2024/ZenlessZonZero_2024_Mix/HyperCommission_04.webm',
+                   '/project/2024/ZenlessZonZero_2024_Mix/HyperCommission_05.webm',
+                 ]
+  },
+
 
   {
     id: 6,
@@ -152,6 +188,7 @@ export const works = [
     year: 2023,
     role: '2D Animation'
   },
+
   {
     id: 2,
     slug: 'oneplus-community',
@@ -185,6 +222,32 @@ export const works = [
       }
     ]
   },
+
+{
+    id: 19,
+    slug: 'KENZO_2023',
+    title: 'KENZO 2023',
+    category: '2023/Animation',
+    url: '/project/2023/Kenzo_2023/Kenzo_2023_02.webm',
+    interactive: true,
+    year: 2023,
+    role: '2D Animation',
+    videoUrl: 'https://vimeo.com/785863077',
+    detailImages: ['/project/2023/Kenzo_2023/Kenzo_2023_01.webm', '/project/2023/Kenzo_2023/Kenzo_2023_02.webm','/project/2023/Kenzo_2023/Kenzo_2023_03.webm'],
+  },
+
+
+{
+    id: 18,
+    title: 'OPPO - Inspiration Challenge',
+    category: '2023/Animation',
+    url: '/project/2023/OPPO_InspirationChallenge/OPPO_InspirationChallenge_Cover.webm',
+    interactive: false,
+    year: 2023,
+    role: 'Animation'
+  },
+
+
   {
     id: 1,
     title: 'Star Trek',
@@ -207,6 +270,28 @@ export const works = [
     year: 2022,
     role: '2D Animation'
   },
+  
+{
+    id: 20,
+    title: 'Kungfu',
+    category: '2022/Animation',
+    url: '/project/2022/LogoAnimation_Kungfu/Kungfu_Cover.webm',
+    interactive: false,
+    year: 2022,
+    role: 'Animation'
+  },
 
+    {
+    id: 17,
+    slug: 'DEDAO APP',
+    title: 'DEDAO APP',
+    category: '2022/Animation',
+    url: '/project/2022/DEDAO_APP/DEDAO_Cover.webm',
+    interactive: true,
+    videoUrl: 'https://vimeo.com/546274768',
+    detailImages: ['/project/2022/DEDAO_APP/DEDAO_01.webm', '/project/2022/DEDAO_APP/DEDAO_02.webm','/project/2022/DEDAO_APP/DEDAO_03.webm','/project/2022/DEDAO_APP/DEDAO_04.webm','/project/2022/DEDAO_APP/DEDAO_05.webm'],
+    year: 2022,
+    role: '2D Animation'
+  },
 
 ]
