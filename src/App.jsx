@@ -107,7 +107,13 @@ export default function App() {
                   Work
                 </NavLink>
 
-                <NavLink to="/Play" className={linkClass}>
+                <NavLink 
+                  to="/Play" 
+                  onClick={() =>
+                    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+                  }
+                  className={linkClass}
+                >
                   Play
                 </NavLink>
 
