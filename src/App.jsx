@@ -51,7 +51,7 @@ export default function App() {
   const linkClass = ({ isActive }) =>
     isActive
       ? 'leading-none border-b-[2px] border-current pb-0'
-      : 'leading-none opacity-30 hover:opacity-100 pb-0'
+      : 'leading-none opacity-100 hover:opacity-100 pb-0'
 
   // ✅ 正常网站
   return (
@@ -149,7 +149,7 @@ export default function App() {
 
               <div className="text-left">
                 <a
-                  href="https://instagram.com/yourhandle"
+                  href="https://www.instagram.com/fafa_motion?igsh=aW56NnBuY2I4dWs%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block leading-none hover:opacity-60 transition-opacity"
@@ -157,17 +157,10 @@ export default function App() {
                   Instagram
                 </a>
 
-                <a
-                  href="https://vimeo.com/yourhandle"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 block leading-none hover:opacity-60 transition-opacity"
-                >
-                  Vimeo
-                </a>
+
 
                 <a
-                  href="https://linkedin.com/in/yourhandle"
+                  href="https://linkedin.com/in/fafa-zhu-689035335"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 block leading-none hover:opacity-60 transition-opacity"
@@ -176,12 +169,12 @@ export default function App() {
                 </a>
 
                 <a
-                  href="https://twitter.com/yourhandle"
+                  href="https://x.com/fafa818969"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-2 block leading-none hover:opacity-60 transition-opacity"
                 >
-                  Twitter
+                  X
                 </a>
               </div>
             </div>

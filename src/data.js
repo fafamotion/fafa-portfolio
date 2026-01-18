@@ -20,23 +20,27 @@ export const works = [
     description:'Music&Sound Design\nVincent Gaudas',
     interactive: true,
     videoUrl: 'https://vimeo.com/1047875984',
-    detailImages: ['/project/2025/ColorFusion/ColorFusion_01.webm', '/project/2025/ColorFusion/ColorFusion_02.webm','/project/2025/ColorFusion/ColorFusion_03.webm','/project/2025/ColorFusion/ColorFusion_04.webm','/project/2025/ColorFusion/ColorFusion_05.webm',],
+    detailImages: ['/project/2025/ColorFusion/ColorFusion_01.webm', '/project/2025/ColorFusion/ColorFusion_02.webm','/project/2025/ColorFusion/ColorFusion_03.webm','/project/2025/ColorFusion/ColorFusion_04.webm','/project/2025/ColorFusion/ColorFusion_05.webm'],
     year: 2025,
-    role: 'Direction,Design,Animation',
+    role: 'Direction,Design,Animation'
   },
   {
     id: 11,
     title: 'Mid',
     category: '2025/Animation',
     url: '/project/2025/Mid/中秋.webm',
-    interactive: false
+    interactive: false,
+    year: 2025,
+    role: 'Animation'
   },
   {
     id: 10,
     title: 'IQOO',
     category: '2025/Animation',
     url: '/project/2025/IQOO/电竞双芯.webm',
-    interactive: false
+    interactive: false,
+    year: 2025,
+    role: 'Animation'
   },
   {
     id: 9,
@@ -56,7 +60,9 @@ export const works = [
     title: 'Book',
     category: '2025/Animation',
     url: '/project/2025/Fruit/book.webm',
-    interactive: true
+    interactive: true,
+    year: 2025,
+    role: 'Animation'
   },
   {
     id: 7,
@@ -66,9 +72,9 @@ export const works = [
     url: '/project/2025/Ink City/inkcity.webm',
     interactive: true,
     videoUrl: 'https://www.youtube.com/embed/4xpc4gLYtwI',
-    detailImages: ['/project/2025/ColorFusion/ColorFusion_01.webm', '/project/2025/ColorFusion/ColorFusion_02.webm','/project/2025/ColorFusion/ColorFusion_03.webm','/project/2025/ColorFusion/ColorFusion_04.webm','/project/2025/ColorFusion/ColorFusion_05.webm',],
+    detailImages: ['/project/2025/ColorFusion/ColorFusion_01.webm', '/project/2025/ColorFusion/ColorFusion_02.webm','/project/2025/ColorFusion/ColorFusion_03.webm','/project/2025/ColorFusion/ColorFusion_04.webm','/project/2025/ColorFusion/ColorFusion_05.webm'],
     year: 2025,
-    role: 'Direction,Design,Animation',
+    role: 'Direction,Design,Animation'
   },
 
   {
@@ -167,8 +173,8 @@ export const works = [
       {
         videoUrl: 'https://vimeo.com/873573216',
         images: [
-          '/project/2023/Oneplus_community_series/ OpenEarsForum_01.webm',
-          '/project/2023/Oneplus_community_series/ OpenEarsForum_02.webm',
+          '/project/2023/Oneplus_community_series/OpenEarsForum_01.webm',
+          '/project/2023/Oneplus_community_series/OpenEarsForum_02.webm',
         ]
       },
       {
@@ -181,9 +187,26 @@ export const works = [
   },
   {
     id: 1,
-    title: '',
-    category: '',
+    title: 'Star Trek',
+    category: '2023/Animation',
     url: '/project/2023/Startrek/star_trek.webm',
-    interactive: false
+    interactive: false,
+    year: 2023,
+    role: 'Animation'
   },
+
+  {
+    id: 15,
+    slug: 'OPPO Breeno',
+    title: 'OPPO Breeno',
+    category: '2022/Animation',
+    url: '/project/2022/OPPO_Breeno/OPPO_Breeno_Cover.webm',
+    interactive: true,
+    videoUrl: 'https://vimeo.com/461664031?fl=pl&fe=sh',
+    detailImages: ['/project/2022/OPPO_Breeno/OPPO_Breeno_01.webm', '/project/2022/OPPO_Breeno/OPPO_Breeno_02.webm'],
+    year: 2022,
+    role: '2D Animation'
+  },
+
+
 ]
