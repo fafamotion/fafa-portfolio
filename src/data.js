@@ -1,7 +1,7 @@
 export const works = [
 
   {
-    id: 7,
+    id: 1,
     slug: 'Calligraphy in Motion',
     title: 'Calligraphy in Motion',
     category: '2025/Director',
@@ -15,7 +15,7 @@ export const works = [
 
 
   {
-    id: 13,
+    id: 2,
     slug: 'Krayon Anyday - Concept Animation',
     title: 'Krayon Anyday',
     category: '2025/Animation',
@@ -27,7 +27,7 @@ export const works = [
     role: '2D Animation'
   },
   {
-    id: 12,
+    id: 3,
     slug: 'ColorFusion',
     title: 'ColorFusion',
     category: '2025/Director',
@@ -40,7 +40,7 @@ export const works = [
     role: 'Direction,Design,Animation'
   },
   {
-    id: 11,
+    id: 4,
     title: 'Mid',
     category: '2025/Animation',
     url: '/project/2025/Mid/中秋.webm',
@@ -49,7 +49,7 @@ export const works = [
     role: 'Animation'
   },
   {
-    id: 10,
+    id: 5,
     title: 'IQOO',
     category: '2025/Animation',
     url: '/project/2025/IQOO/电竞双芯.webm',
@@ -58,7 +58,7 @@ export const works = [
     role: 'Animation'
   },
   {
-    id: 9,
+    id: 6,
     slug: 'VIVOS30',
     title: 'VIVO S30',
     category: '2025/Animation',
@@ -70,7 +70,7 @@ export const works = [
     role: '2D Animation'
   },
   {
-    id: 8,
+    id: 7,
     slug: 'book',
     title: 'Book',
     category: '2025/Animation',
@@ -82,7 +82,7 @@ export const works = [
 
 
   {
-    id: 21,
+    id: 8,
     slug: 'JINGDONG Furniture',
     title: 'JINGDONG Furniture',
     category: '2025/Animation',
@@ -95,7 +95,7 @@ export const works = [
   },
 
   {
-    id: 14,
+    id: 9,
     slug: 'PEACEBIRD',
     title: 'PEACEBIRD - The Year of Dragon',
     category: '2024/Animation',
@@ -108,7 +108,7 @@ export const works = [
   },
 
   {
-    id: 15,
+    id: 10,
     slug: 'OPPO Community',
     title: 'OPPO Community',
     category: '2024/Animation',
@@ -121,7 +121,7 @@ export const works = [
   },
 
   {
-    id: 16,
+    id: 11,
     slug: 'HyperCommission - ZenlessZoneZero 2024 Mix',
     title: 'HyperCommission - ZenlessZoneZero 2024 Mix',
     category: '2024/Animation',
@@ -140,7 +140,7 @@ export const works = [
 
 
   {
-    id: 6,
+    id: 12,
     slug: 'whiteNoise',
     title: 'WhiteNoise',
     category: '2024/Animation',
@@ -153,7 +153,7 @@ export const works = [
   },
 
   {
-    id: 5,
+    id: 13,
     slug: 'OxygenOS_14',
     title: 'OxygenOS 14',
     category: '2024/Animation',
@@ -165,7 +165,7 @@ export const works = [
     role: '2D Animation'
   },
   {
-    id: 4,
+    id: 14,
     slug: 'OnePlusNord',
     title: 'OnePlusNord',
     category: '2024/Animation',
@@ -177,7 +177,7 @@ export const works = [
     role: '2D Animation'
   },
   {
-    id: 3,
+    id: 15,
     slug: 'MindPark 2023',
     title: 'MindPark 2023',
     category: '2023/Animation',
@@ -190,7 +190,7 @@ export const works = [
   },
 
   {
-    id: 2,
+    id: 16,
     slug: 'oneplus-community',
     title: 'OnePlus Community Series',
     category: '2023/Animation',
@@ -224,7 +224,7 @@ export const works = [
   },
 
 {
-    id: 19,
+    id: 17,
     slug: 'KENZO_2023',
     title: 'KENZO 2023',
     category: '2023/Animation',
@@ -249,7 +249,7 @@ export const works = [
 
 
   {
-    id: 1,
+    id: 19,
     title: 'Star Trek',
     category: '2023/Animation',
     url: '/project/2023/Startrek/star_trek.webm',
@@ -259,7 +259,7 @@ export const works = [
   },
 
   {
-    id: 15,
+    id: 20,
     slug: 'OPPO Breeno',
     title: 'OPPO Breeno',
     category: '2022/Animation',
@@ -272,7 +272,7 @@ export const works = [
   },
   
 {
-    id: 20,
+    id: 21,
     title: 'Kungfu',
     category: '2022/Animation',
     url: '/project/2022/LogoAnimation_Kungfu/Kungfu_Cover.webm',
@@ -282,7 +282,7 @@ export const works = [
   },
 
     {
-    id: 17,
+    id: 22,
     slug: 'DEDAO APP',
     title: 'DEDAO APP',
     category: '2022/Animation',
@@ -295,3 +295,5 @@ export const works = [
   },
 
 ]
+
+

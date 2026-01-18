@@ -1,179 +1,150 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { works } from '../data'; // 导入数据
+import React, { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { works } from '../data';
 
-export default function DetailPage({ isDark }) {
-  const { id } = useParams(); // 这里的 id 实际上是 slug
+const DetailPage = ({ isDark }) => {
+  const { slug } = useParams();
+  const navigate = useNavigate();
+  const work = works.find((w) => w.slug === slug);
 
-  // 根据 slug 查找对应的项目
-  const work = works.find(item => item.slug === id);
+  useEffect(() => {
+    if (!work) {
+      navigate('/');
+    }
+  }, [work, navigate]);
 
-  // 如果没有找到项目，可以显示一个提示信息
-  if (!work) {
-    return <div>项目未找到</div>;
-  }
+  if (!work) return null;
+
+  const isVideo = (url) => url.endsWith('.webm') || url.endsWith('.mp4');
 
   return (
-    <div className="max-w-5xl mx-auto py-12 mb-12">
-      <h1 className="text-6xl font-bold mb-1">{work.title}</h1>
-      <div className={`grid grid-cols-2 gap-4 mb-8 text-sm ${isDark ? 'text-white' : 'text-black'}`}>
-        <div>
-          <p>Year</p>
-          <p>{work.year}</p>
+    <div className={`w-full min-h-screen pt-8 pb-20 ${isDark ? 'text-white' : 'text-black'}`}>
+      <div className="max-w-[1200px] mx-auto px-6">
+        {/* 1. Title */}
+        <h1 className="text-4xl md:text-6xl font-bold mb-1">{work.title}</h1>
+
+        {/* 2. Year & Role */}
+        <div className="flex flex-col gap-0 mb-8 text-base opacity-80">
+          <div>
+            <span className="block text-xs opacity-60 mb-0.5">YEAR</span>
+            {work.year}
+          </div>
+          <div>
+            <span className="block text-xs opacity-60 mb-0.5">ROLE</span>
+            {work.role}
+          </div>
         </div>
-        <div>
-          <p>Role</p>
-          <p>{work.role}</p>
-        </div>
-      </div>
 
-      {/* 项目简介 */}
-      {work.description && (
-        <div className="mb-12">
-          {work.description.split('\n').map((line, index) => (
-            <p key={index} className={index === 0 ? 'text-base' : 'text-sm text-black/50 dark:text-white/50'}>
-              {line}
-            </p>
-          ))}
-        </div>
-      )}
-
-      {/* Media Section: Renders mediaPairs or default video/grid */}
-      {(() => {
-        const getEmbedUrl = (url) => {
-          if (!url) return null;
-          const youtubeRegex = /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/;
-          const youtubeMatch = url.match(youtubeRegex);
-          if (youtubeMatch && youtubeMatch[1]) {
-            return `https://www.youtube.com/embed/${youtubeMatch[1]}`;
-          }
-          const vimeoRegex = /(?:vimeo\.com\/|player\.vimeo\.com\/video\/)(\d+)/;
-          const vimeoMatch = url.match(vimeoRegex);
-          if (vimeoMatch && vimeoMatch[1]) {
-            return `https://player.vimeo.com/video/${vimeoMatch[1]}`;
-          }
-          return null;
-        };
-
-        // Layout for projects with mediaGroups (e.g., OnePlus Community)
-        if (work.mediaGroups && work.mediaGroups.length > 0) {
-          return (
-            <div>
-              {work.mediaGroups.map((group, index) => {
-                const embedUrl = getEmbedUrl(group.videoUrl);
-                const imgCount = group.images.length;
-                const gridClass = (imgCount === 4 || imgCount === 2)
-                  ? 'grid-cols-1 sm:grid-cols-2'
-                  : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
-
-                return (
-                  <div key={index} className="mb-12">
-                    {embedUrl && (
-                      <div style={{padding: '56.25% 0 0 0', position: 'relative'}} className="mb-8">
-                        <iframe
-                          src={embedUrl}
-                          frameBorder="0"
-                          allow="autoplay; fullscreen; picture-in-picture"
-                          allowFullScreen
-                          style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                          title={`Video ${index + 1}`}
-                        ></iframe>
-                      </div>
-                    )}
-                    {group.images && group.images.length > 0 && (
-                      <div className={`grid ${gridClass} gap-8`}>
-                        {group.images.map((src, idx) => {
-                          const isVideo = /\.(webm|mp4)$/i.test(src);
-                          return (
-                            <div key={idx} className="bg-gray-100 dark:bg-neutral-800 rounded-lg overflow-hidden shadow-md">
-                              {isVideo ? (
-                                <video
-                                  src={src}
-                                  autoPlay
-                                  loop
-                                  muted
-                                  playsInline
-                                  preload="metadata"
-                                  className="w-full h-full object-cover"
-                                />
-                              ) : (
-                                <img
-                                  src={src}
-                                  alt={`Detail ${index + 1}-${idx + 1}`}
-                                  loading="lazy"
-                                  className="w-full h-full object-cover"
-                                />
-                              )}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+        {/* 3. Main Video (Vimeo or Local) */}
+        <div className="w-full mb-4">
+          {work.videoUrl ? (
+            <div className="relative w-full pt-[56.25%] bg-black/5">
+              <iframe
+                src={work.videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/')}
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
             </div>
-          );
-        }
+          ) : (
+            <div className="w-full">
+              {isVideo(work.url) ? (
+                <video
+                  src={work.url}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto"
+                />
+              ) : (
+                <img src={work.url} alt={work.title} className="w-full h-auto" />
+              )}
+            </div>
+          )}
+        </div>
 
-        // Default layout for single video and image grid
-        return (
-          <>
-            {work.videoUrl && (() => {
-              const embedUrl = getEmbedUrl(work.videoUrl);
-              if (!embedUrl) return null;
-              return (
-                <div style={{padding: '56.25% 0 0 0', position: 'relative'}} className="mb-12">
-                  <iframe
-                    src={embedUrl}
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-                    title={work.title}
-                  ></iframe>
-                </div>
-              );
-            })()}
+        {/* 4. Description */}
+        {work.description && (
+          <div className="max-w-2xl mb-16 whitespace-pre-line text-lg leading-relaxed opacity-90">
+            {work.description}
+          </div>
+        )}
 
-            {work.detailImages && work.detailImages.length > 0 && (() => {
-              const imageCount = work.detailImages.length;
-              const gridClass = (imageCount === 4 || imageCount === 2)
-                ? 'grid-cols-1 sm:grid-cols-2'
-                : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3';
-              return (
-                <div className={`grid ${gridClass} gap-8`}>
-                  {work.detailImages.map((src, index) => {
-                    const isVideo = /\.(webm|mp4)$/i.test(src);
-                    return (
-                      <div key={index} className="bg-gray-100 dark:bg-neutral-800 rounded-lg overflow-hidden shadow-md">
-                        {isVideo ? (
+        {/* 5. Detail Images / Media Groups */}
+        <div className="space-y-24">
+          {work.mediaGroups ? (
+            // Special layout for OnePlus Community etc.
+            work.mediaGroups.map((group, index) => (
+              <div key={index} className="space-y-8">
+                {/* Group Video */}
+                {group.videoUrl && (
+                  <div className="relative w-full pt-[56.25%] bg-black/5">
+                    <iframe
+                      src={group.videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/')}
+                      className="absolute top-0 left-0 w-full h-full"
+                      frameBorder="0"
+                      allow="autoplay; fullscreen; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+                
+                {/* Group Images Grid */}
+                {group.images && group.images.length > 0 && (
+                  <div className={`grid gap-4 ${
+                    group.images.length === 1 ? 'grid-cols-1' :
+                    group.images.length === 2 ? 'grid-cols-2' :
+                    'grid-cols-1 md:grid-cols-3'
+                  }`}>
+                    {group.images.map((img, imgIndex) => (
+                      <div key={imgIndex} className="w-full">
+                        {isVideo(img) ? (
                           <video
-                            src={src}
+                            src={img}
                             autoPlay
                             loop
                             muted
                             playsInline
-                            preload="metadata"
-                            className="w-full h-full object-cover"
+                            className="w-full h-auto object-cover"
                           />
                         ) : (
-                          <img
-                            src={src}
-                            alt={`${work.title} detail ${index + 1}`}
-                            loading="lazy"
-                            className="w-full h-full object-cover"
-                          />
+                          <img src={img} alt="" className="w-full h-auto object-cover" />
                         )}
                       </div>
-                    );
-                  })}
-                </div>
-              );
-            })()}
-          </>
-        );
-      })()}
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))
+          ) : (
+            // Standard Detail Images
+            work.detailImages && work.detailImages.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {work.detailImages.map((img, index) => (
+                  <div key={index} className="w-full">
+                    {isVideo(img) ? (
+                      <video
+                        src={img}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-cover"
+                      />
+                    ) : (
+                      <img src={img} alt="" className="w-full h-auto object-cover" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            )
+          )}
+        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default DetailPage;

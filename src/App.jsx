@@ -135,7 +135,7 @@ export default function App() {
           {/* Pages：不传 isDark 给 Work，避免作品区"像刷新" */}
           <Routes>
             <Route path="/" element={<Work />} />
-            <Route path="/work/:id" element={<DetailPage isDark={isDark} />} />
+            <Route path="/work/:slug" element={<DetailPage isDark={isDark} />} />
             <Route path="/Play" element={<Play />} />
             <Route path="/reel" element={<Reel />} />
             <Route path="/about" element={<About />} />

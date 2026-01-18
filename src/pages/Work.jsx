@@ -110,11 +110,11 @@ function Work() {
                     <div className="absolute inset-0 bg-white/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                       <div className="flex flex-col items-center text-center gap-[1px]">
-                        <div className="text-[22px] md:text-[30px] font-bold tracking-tight text-black leading-[0.9]">
+                        <div className="text-[22px] md:text-[28px] font-bold tracking-tight text-black leading-[0.9]">
                           {work.title}
                         </div>
                         {work.category && (
-                          <div className="text-[10px] tracking-widest text-black/70 leading-none mt-1">
+                          <div className="text-[10px] tracking-widest text-black/70 leading-none">
                             {work.category}
                           </div>
                         )}
