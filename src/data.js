@@ -15,6 +15,20 @@ export const works = [
 
 
   {
+    id: 23,
+    slug: 'Running Series',
+    title: 'Running Series',
+    category: '2025/Animation',
+    url: '/project/2025/Running_series/Running_series_Cover.webm',
+    interactive: false,
+    videoUrl: 'https://vimeo.com/1066523245',
+    detailImages: ['/project/2025/KrayonAnyday/KrayonAnyday_01.webm', '/project/2025/KrayonAnyday/KrayonAnyday_02.webm'],
+    year: 2025,
+    role: '2D Animation'
+  },
+
+
+  {
     id: 2,
     slug: 'Krayon Anyday - Concept Animation',
     title: 'Krayon Anyday',
@@ -75,7 +89,7 @@ export const works = [
     title: 'Book',
     category: '2025/Animation',
     url: '/project/2025/Fruit/book.webm',
-    interactive: true,
+    interactive: false,
     year: 2025,
     role: 'Animation'
   },
