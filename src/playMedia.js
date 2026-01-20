@@ -1,7 +1,8 @@
 export const playMedia = [
   { src: '/play/play_01.webm'},
   { src: '/play/play_02.webm' },
-    { src: '/play/play_16.webm' },
+  { src: '/play/play_17.webm' },
+  { src: '/play/play_16.webm' },
   { src: '/play/play_03.webm' },
   { src: '/play/play_04.webm' },
   { src: '/play/play_05.webm' },
@@ -15,5 +16,8 @@ export const playMedia = [
   { src: '/play/play_13.webm' },
   { src: '/play/play_14.webm' },
   { src: '/play/play_15.webm' },
-
+  { src: '/play/play_18.webm' },
+  { src: '/play/play_19.webm' },
+  { src: '/play/play_20.webm' },
+  { src: '/play/play_21.webm' },
 ];

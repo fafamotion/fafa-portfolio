@@ -8,11 +8,20 @@ export const works = [
     url: '/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_Cover.webm',
     interactive: true,
     videoUrl: 'https://www.youtube.com/embed/4xpc4gLYtwI',
-    detailImages: ['/project/2025/ColorFusion/ColorFusion_01.webm', '/project/2025/ColorFusion/ColorFusion_02.webm','/project/2025/ColorFusion/ColorFusion_03.webm','/project/2025/ColorFusion/ColorFusion_04.webm','/project/2025/ColorFusion/ColorFusion_05.webm'],
+    detailImages: ['/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_01.webm', '/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_02.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_03.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_04.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_05.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_06.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_07.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_08.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_09.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_10.webm','/project/2025/Calligraphy_in_Motion/Calligraphy_in_Motion_11.webm'],
     year: 2025,
     role: 'Direction,Design,Animation'
   },
 
+    {
+    id: 27,
+    title: 'ZZZ Car',
+    category: '2025/Animation',
+    url: '/project/2025/ZZZ_Car/ZZZ_Car_Cover.webm',
+    interactive: false,
+    year: 2025,
+    role: 'Animation'
+  },
 
   {
     id: 23,
@@ -25,6 +34,16 @@ export const works = [
     detailImages: ['/project/2025/KrayonAnyday/KrayonAnyday_01.webm', '/project/2025/KrayonAnyday/KrayonAnyday_02.webm'],
     year: 2025,
     role: '2D Animation'
+  },
+
+  {
+    id: 26,
+    title: 'OnePlus AI',
+    category: '2025/Animation',
+    url: '/project/2025/OnePlus_AI/OnePlus_AI_Cover.webm',
+    interactive: false,
+    year: 2025,
+    role: 'Animation'
   },
 
 
@@ -44,7 +63,7 @@ export const works = [
     id: 3,
     slug: 'ColorFusion',
     title: 'ColorFusion',
-    category: '2025/Director',
+    category: '2025/Personal',
     url: '/project/2025/ColorFusion/ColorFusion_02.webm',
     description:'Music&Sound Design\nVincent Gaudas',
     interactive: true,
@@ -53,15 +72,37 @@ export const works = [
     year: 2025,
     role: 'Direction,Design,Animation'
   },
+
   {
-    id: 4,
-    title: 'Mid',
-    category: '2025/Animation',
-    url: '/project/2025/Mid/中秋.webm',
+    id: 25,
+    title: 'Instagram 10K',
+    category: '2025/Personal',
+    url: '/project/2025/Instagram_10K/Instagram_10K_Cover.webm',
     interactive: false,
     year: 2025,
-    role: 'Animation'
+    role: 'Direction,Design,Animation'
   },
+
+  {
+    id: 24,
+    title: 'Calligraphy Exploaration',
+    category: '2025/Personal',
+    url: '/project/2025/Calligraphy_exploaration/Calligraphy_exploaration_Cover.webm',
+    interactive: false,
+    year: 2025,
+    role: 'Direction,Design,Animation'
+  },
+
+  {
+    id: 4,
+    title: 'RedNote 10K',
+    category: '2024/Personal',
+    url: '/project/2024/Rednote_10K/Rednote_10K_Cover.webm',
+    interactive: false,
+    year: 2024,
+    role: 'Direction,Design,Animation'
+  },
+
   {
     id: 5,
     title: 'IQOO',
@@ -158,10 +199,10 @@ export const works = [
     slug: 'whiteNoise',
     title: 'WhiteNoise',
     category: '2024/Animation',
-    url: '/project/2024/Whitenoise/whitenoise.webm',
+    url: '/project/2024//Whitenoise/Whitenoise_Cover.webm',
     interactive: true,
     videoUrl: 'https://vimeo.com/1056966403',
-    detailImages: ['/project/2025/VIVOS30/VIVOS30_01.webm', '/project/2025/Krayon/img2.gif'],
+    detailImages: ['/project/2024/Whitenoise/Whitenoise_01.webm', '/project/2024/Whitenoise/Whitenoise_02.webm', '/project/2024/Whitenoise/Whitenoise_03.webm', '/project/2024/Whitenoise/Whitenoise_04.webm', '/project/2024/Whitenoise/Whitenoise_05.webm', '/project/2024/Whitenoise/Whitenoise_06.webm'],
     year: 2024,
     role: 'Animation'
   },

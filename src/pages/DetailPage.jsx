@@ -100,7 +100,7 @@ const DetailPage = ({ isDark }) => {
             ))
           ) : (
             work.detailImages && work.detailImages.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {work.detailImages.map((img, index) => (
                   <div key={index} className="w-full">
                     <MediaItem src={img} className="object-cover" />
