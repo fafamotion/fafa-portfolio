@@ -94,6 +94,17 @@ export const works = [
   },
 
   {
+    id: 27,
+    title: 'EGGY PARTY - Carnival',
+    category: '2024/Animation',
+    url: '/project/2024/EGGY_PARTY_Carnival/EGGY_PARTY_Carnival_Cover.webm',
+    interactive: false,
+    year: 2024,
+    role: '2D Animation'
+  },
+
+
+  {
     id: 4,
     title: 'RedNote 10K',
     category: '2024/Personal',
@@ -199,7 +210,7 @@ export const works = [
     slug: 'whiteNoise',
     title: 'WhiteNoise',
     category: '2024/Animation',
-    url: '/project/2024//Whitenoise/Whitenoise_Cover.webm',
+    url: '/project/2024//Whitenoise/Whitenoise_04.webm',
     interactive: true,
     videoUrl: 'https://vimeo.com/1056966403',
     detailImages: ['/project/2024/Whitenoise/Whitenoise_01.webm', '/project/2024/Whitenoise/Whitenoise_02.webm', '/project/2024/Whitenoise/Whitenoise_03.webm', '/project/2024/Whitenoise/Whitenoise_04.webm', '/project/2024/Whitenoise/Whitenoise_05.webm', '/project/2024/Whitenoise/Whitenoise_06.webm'],
@@ -337,6 +348,19 @@ export const works = [
   },
 
     {
+    id: 28,
+    slug: 'Benzema_yili',
+    title: 'Benzema x 伊利',
+    category: '2022/Animation',
+    url: '/project/2022/Benzema_yili/Benzema_yili_Cover.webm',
+    interactive: true,
+    videoUrl: 'https://vimeo.com/761719803',
+    detailImages: ['/project/2022/Benzema_yili/Benzema_yili_01.webm', '/project/2022/Benzema_yili/Benzema_yili_02.webm', '/project/2022/Benzema_yili/Benzema_yili_03.webm'],
+    year: 2022,
+    role: '2D Animation'
+  },
+
+  {
     id: 22,
     slug: 'DEDAO APP',
     title: 'DEDAO APP',
@@ -349,6 +373,31 @@ export const works = [
     role: '2D Animation'
   },
 
+   {
+    id: 29,
+    slug: 'STACCATO_LogoAnimation',
+    title: 'STACCATO Logo Animation',
+    category: '2021/Animation',
+    url: '/project/2021/STACCATO_LogoAnimation/STACCATO_LogoAnimation_Cover.webm',
+    interactive: false,
+    videoUrl: 'https://vimeo.com/583702799',
+    detailImages: ['/project/2022/Benzema_yili/Benzema_yili_01.webm', '/project/2022/Benzema_yili/Benzema_yili_02.webm', '/project/2022/Benzema_yili/Benzema_yili_03.webm'],
+    year: 2021,
+    role: '2D Animation'
+  },
+
+   {
+    id: 30,
+    slug: 'TencentWesee_LuckyOx',
+    title: 'Tencent Wesee - Lucky Ox',
+    category: '2021/Animation',
+    url: '/project/2021/TencentWesee_LuckyOx/TencentWesee_LuckyOx_01.webm',
+    interactive: true,
+    videoUrl: 'https://vimeo.com/513660593',
+    detailImages: ['/project/2021/TencentWesee_LuckyOx/TencentWesee_LuckyOx_01.webm', '/project/2021/TencentWesee_LuckyOx/TencentWesee_LuckyOx_02.webm', '/project/2021/TencentWesee_LuckyOx/TencentWesee_LuckyOx_03.webm'],
+    year: 2021,
+    role: '2D Animation'
+  },
 ]
 
 
