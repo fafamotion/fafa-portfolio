@@ -59,7 +59,7 @@ export default function App() {
       {/* ✅ 用 isDark 直接控制整站背景/文字 */}
       <div
         className={`min-h-screen font-sans ${
-          isDark ? 'bg-[#121212] text-white' : 'bg-white text-black'
+          isDark ? 'bg-black text-white' : 'bg-white text-black'
         }`}
       >
         <div className="mx-auto max-w-none px-[clamp(16px,4vw,64px)]">
@@ -75,7 +75,7 @@ export default function App() {
               <div className="flex flex-col items-start">
                 <button
                   type="button"
-                  className="text-8xl font-bold tracking-tighter leading-none -ml-[0.06em]
+                  className="text-[200px] font-bold tracking-tighter leading-none -ml-[0.06em]
                              cursor-pointer select-none bg-transparent border-0 p-0 text-inherit"
                   onPointerDown={(e) => {
                     e.preventDefault()
@@ -90,12 +90,12 @@ export default function App() {
                   Fafa
                 </button>
 
-                <span className="text-[12px] tabular-nums -translate-y-[8px]">
+                <span className="text-[28px] tabular-nums -translate-y-[8px]">
                   QINGDAO,CN - {time}
                 </span>
               </div>
 
-              <div className="flex gap-2 sm:gap-4 text-[18px] pb-1 leading-none -translate-y-[8px] flex-col sm:flex-row items-start sm:items-end">
+              <div className="flex gap-2 sm:gap-4 text-[28px] pb-1 leading-none -translate-y-[8px] flex-col sm:flex-row items-start sm:items-end">
                 <NavLink
                   to="/"
                   end
@@ -130,7 +130,7 @@ export default function App() {
                     const footer = document.getElementById('contact')
                     footer?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="leading-none opacity-100 hover:opacity-100 pb-0 border-0 bg-transparent text-inherit cursor-pointer inline-block p-0 m-0 font-inherit text-[18px] self-start sm:self-end"
+                  className="leading-none opacity-100 hover:opacity-100 pb-0 border-0 bg-transparent text-inherit cursor-pointer inline-block p-0 m-0 font-inherit text-[28px] self-start sm:self-end"
                 >
                   Contact
                 </button>

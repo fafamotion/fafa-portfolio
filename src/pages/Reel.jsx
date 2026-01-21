@@ -1,7 +1,7 @@
 import React from 'react';
 
 const VideoContainer = ({ src, title }) => (
-  <div className="w-full aspect-video bg-black overflow-hidden">
+  <div className="w-full h-screen bg-black overflow-hidden">
     <iframe
       className="w-full h-full"
       src={src}
@@ -15,13 +15,11 @@ const VideoContainer = ({ src, title }) => (
 
 export default function Reel() {
   return (
-    <section className="py-2">
-      <div className="max-w-[1000px] mx-auto flex flex-col gap-6">
-        <VideoContainer 
-          src="https://www.youtube.com/embed/_Cba6MoJOAA?rel=0&modestbranding=1" 
-          title="Reel 2025" 
-        />
-      </div>
+    <section className="pt-0">
+      <VideoContainer 
+        src="https://www.youtube.com/embed/_Cba6MoJOAA?rel=0&modestbranding=1" 
+        title="Reel 2025" 
+      />
     </section>
   );
 }
