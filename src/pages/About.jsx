@@ -36,9 +36,7 @@ export default function About() {
 I’m drawn to balance in motion — where calm and energy, structure and flow, exist side by side.
               </p>
 
-              <p className="mb-5">
-                I enjoy combining motion with a wide range of disciplines and cultural contexts, especially reinterpreting historical elements through contemporary visual language.
-              </p>
+              
 
               <p className="mb-5">
                 I enjoy combining motion design with different disciplines and cultural contexts, especially reinterpreting historical elements through a contemporary visual language. For me, motion is a language — a way to tell stories through time.

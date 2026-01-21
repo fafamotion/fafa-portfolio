@@ -150,7 +150,7 @@ export default function App() {
           {/* Footer：border 跟随 isDark */}
           <footer
             id="contact"
-            className={`mt-24 border-t py-10 text-[18px] ${
+            className={`mt-24 border-t py-10 text-[28px] ${
               isDark ? 'border-white/10' : 'border-black/10'
             }`}
           >
