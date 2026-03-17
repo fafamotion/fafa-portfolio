@@ -36,7 +36,7 @@ export default function About() {
     >
       <div className="w-full">
         <div className="max-w-[1100px] mx-auto py-10">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <div className="flex flex-col md:flex-row items-start gap-8 md:gap-12">
             
             <motion.div 
               className="flex-shrink-0"
@@ -51,12 +51,12 @@ export default function About() {
             </motion.div>
 
             <motion.div 
-              className="flex-1 text-[26px] leading-tight opacity-100 text-left"
+              className="flex-1 text-[22px] leading-tight opacity-100 text-left"
               variants={itemVariants}
               initial={hasMounted.current ? false : undefined}
             >
               <p className="mb-5">
-                I'm Fafa, a senior 2D motion designer based in Qingdao, China, currently working at{' '}
+                I'm Fafa, a Senior 2D motion designer based in Qingdao, China, currently working at{' '}
                 <a
                   href="https://flatwhitemotion.com"
                   target="_blank"
