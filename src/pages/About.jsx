@@ -1,74 +1,117 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.16,
+      delayChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: 'easeOut' },
+  },
+};
 
 export default function About() {
+  const hasMounted = useRef(false);
+  useEffect(() => {
+    hasMounted.current = true;
+  }, []);
+
   return (
-    <section className="min-h-[calc(100vh-120px)] flex items-center">
-      {/* 120px ≈ 你的 nav + footer 预留高度，可按实际调 */}
+    <motion.section 
+      className="min-h-[calc(100vh-120px)] flex items-center"
+      variants={containerVariants}
+      initial={hasMounted.current ? false : 'hidden'}
+      animate="show"
+    >
       <div className="w-full">
-        <div className="max-w-[1700px] mx-auto py-10">
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12">
+        <div className="max-w-[1100px] mx-auto py-10">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             
-            <div className="flex-shrink-0">
+            <motion.div 
+              className="flex-shrink-0"
+              variants={itemVariants}
+              initial={hasMounted.current ? false : undefined}
+            >
               <img 
                 src="/about.jpg" 
                 alt="Fafa" 
-                className="w-full md:w-[600px] h-auto md:h-[800px] object-cover"
+                className="w-full md:w-[500px] h-auto md:h-[500px] object-cover aspect-square"
               />
-            </div>
+            </motion.div>
 
-            <div className="flex-1 text-[28px] leading-tight opacity-80 text-left">
+            <motion.div 
+              className="flex-1 text-[26px] leading-tight opacity-100 text-left"
+              variants={itemVariants}
+              initial={hasMounted.current ? false : undefined}
+            >
               <p className="mb-5">
-                I'm Junfeng Zhu, also known as <span className="font-bold">Fafa</span>.
-                <br />
-                I'm a senior 2D motion designer based in Qingdao, China, currently working at{' '}
+                I'm Fafa, a senior 2D motion designer based in Qingdao, China, currently working at{' '}
                 <a
                   href="https://flatwhitemotion.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline underline-offset-2 hover:opacity-60 transition-opacity"
+                  className="underline underline-offset-2 font-bold hover:opacity-60 transition-opacity"
                 >
                   FlatwhiteMotion
                 </a>.
               </p>
 
               <p className="mb-5">
-                With nearly 8 years of experience, my work is shaped by ideas of stillness and movement.
-I’m drawn to balance in motion — where calm and energy, structure and flow, exist side by side.
+               I create abstract and geometric motion, exploring natural movement and balance through ideas inspired by Taoist philosophy.
               </p>
 
-              
-
               <p className="mb-5">
-                I enjoy combining motion design with different disciplines and cultural contexts, especially reinterpreting historical elements through a contemporary visual language. For me, motion is a language — a way to tell stories through time.
+               Recently exploring Rive and Cavalry, experimenting with different ways of building motion systems.
               </p>
 
               <p>
-                When I’m not glued to my screen, you’ll probably find me practicing calligraphy.
+                When I'm not in front of the screen, you'll probably find me practicing calligraphy.
               </p>
-<p className="mt-6">
-  If you have an interesting project in mind — or just want to say hi<a
-  href="mailto:heyfafamotion@gmail.com"
-  className="
-    block
-    mt-0
-    font-bold
-    text-[30px]
-    underline
-    underline-offset-2
-    hover:opacity-60
-    transition-opacity
-  "
->
-  heyfafamotion@gmail.com
-</a>
-
-</p>
-
-            </div>
-
+            </motion.div>
           </div>
+
+          {/* 三张图片 */}
+          <motion.div 
+            className="mt-6 grid grid-cols-3 gap-4"
+            variants={containerVariants}
+            initial={hasMounted.current ? false : 'hidden'}
+            animate="show"
+          >
+            <motion.img 
+              src="/about2.jpg" 
+              alt="About 2" 
+              className="w-full aspect-square object-cover"
+              variants={itemVariants}
+              initial={hasMounted.current ? false : undefined}
+            />
+            <motion.img 
+              src="/about3.jpg" 
+              alt="About 3" 
+              className="w-full aspect-square object-cover"
+              variants={itemVariants}
+              initial={hasMounted.current ? false : undefined}
+            />
+            <motion.img 
+              src="/about4.jpg" 
+              alt="About 4" 
+              className="w-full aspect-square object-cover"
+              variants={itemVariants}
+              initial={hasMounted.current ? false : undefined}
+            />
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

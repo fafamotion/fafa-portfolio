@@ -75,7 +75,7 @@ export default function App() {
               <div className="flex flex-col items-start">
                 <button
                   type="button"
-                  className="text-[200px] font-bold tracking-tighter leading-none -ml-[0.06em]
+                  className="text-[100px] font-bold tracking-tighter leading-none -ml-[0.06em]
                              cursor-pointer select-none bg-transparent border-0 p-0 text-inherit"
                   onPointerDown={(e) => {
                     e.preventDefault()
@@ -90,12 +90,12 @@ export default function App() {
                   Fafa
                 </button>
 
-                <span className="text-[28px] tabular-nums -translate-y-[8px]">
-                  QINGDAO,CN - {time}
+                <span className="text-[15px] tabular-nums -translate-y-[8px]">
+                  QINGDAO,CHINA - {time}
                 </span>
               </div>
 
-              <div className="flex gap-2 sm:gap-4 text-[28px] pb-1 leading-none -translate-y-[8px] flex-col sm:flex-row items-start sm:items-end">
+              <div className="flex gap-2 sm:gap-4 text-[18px] pb-1 leading-none -translate-y-[8px] flex-col sm:flex-row items-start sm:items-end">
                 <NavLink
                   to="/"
                   end
@@ -130,7 +130,7 @@ export default function App() {
                     const footer = document.getElementById('contact')
                     footer?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="leading-none opacity-100 hover:opacity-100 pb-0 border-0 bg-transparent text-inherit cursor-pointer inline-block p-0 m-0 font-inherit text-[28px] self-start sm:self-end"
+                  className="leading-none opacity-100 hover:opacity-100 pb-0 border-0 bg-transparent text-inherit cursor-pointer inline-block p-0 m-0 font-inherit text-[18px] self-start sm:self-end"
                 >
                   Contact
                 </button>
@@ -150,15 +150,22 @@ export default function App() {
           {/* Footer：border 跟随 isDark */}
           <footer
             id="contact"
-            className={`mt-24 border-t py-10 text-[28px] ${
+            className={`mt-14 border-t py-10 text-[18px] ${
               isDark ? 'border-white/10' : 'border-black/10'
             }`}
           >
             <div className="flex items-start justify-between">
               <div className="min-w-[220px]">
+                <p className={`text-[16px] mb-2 ${isDark ? 'text-white/100' : 'text-black/100'}`}>
+                  If you have a project you'd like to collaborate on,or just want to say hi, feel free to reach out:)
+                </p>
                 <a
                   href="mailto:heyfafamotion@gmail.com"
-                  className="leading-none hover:opacity-60 transition-opacity"
+                  className={`text-[24px] font-bold leading-none transition-all duration-300 hover:scale-105 inline-block ${
+                    isDark 
+                      ? 'text-white hover:text-[#FF6B6B]' 
+                      : 'text-black hover:text-[#E74C3C]'
+                  }`}
                 >
                   heyfafamotion@gmail.com
                 </a>
@@ -169,7 +176,11 @@ export default function App() {
                   href="https://www.instagram.com/fafa_motion?igsh=aW56NnBuY2I4dWs%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block leading-none hover:opacity-60 transition-opacity"
+                  className={`block leading-none transition-all duration-300 hover:scale-105 ${
+                    isDark 
+                      ? 'text-white hover:text-[#E4405F]' 
+                      : 'text-black hover:text-[#C13584]'
+                  }`}
                 >
                   Instagram
                 </a>
@@ -178,16 +189,50 @@ export default function App() {
                   href="https://linkedin.com/in/fafa-zhu-689035335"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+                  className={`mt-2 block leading-none transition-all duration-300 hover:scale-105 ${
+                    isDark 
+                      ? 'text-white hover:text-[#0077B5]' 
+                      : 'text-black hover:text-[#0077B5]'
+                  }`}
                 >
                   LinkedIn
                 </a>
 
                 <a
+                  href="https://www.youtube.com/@fafamotion"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-2 block leading-none transition-all duration-300 hover:scale-105 ${
+                    isDark 
+                      ? 'text-white hover:text-[#ff0033]' 
+                      : 'text-black hover:text-[#ff0033]'
+                  }`}
+                >
+                  Youtube
+                </a>
+<a
+                  href="https://space.bilibili.com/7557972?spm_id_from=333.788.0.0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-2 block leading-none transition-all duration-300 hover:scale-105 ${
+                    isDark 
+                      ? 'text-white hover:text-[#00aeec]' 
+                      : 'text-black hover:text-[#00aeec]'
+                  }`}
+                >
+                  Bilibili
+                </a>
+
+
+                <a
                   href="https://x.com/fafa818969"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 block leading-none hover:opacity-60 transition-opacity"
+                  className={`mt-2 block leading-none transition-all duration-300 hover:scale-105 ${
+                    isDark 
+                      ? 'text-white hover:text-[#1DA1F2]' 
+                      : 'text-black hover:text-[#0D8BD9]'
+                  }`}
                 >
                   X
                 </a>
